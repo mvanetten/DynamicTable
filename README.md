@@ -27,7 +27,6 @@ git clone https://github.com/mvanetten/dynamictable.git
 You can chain multiple methods to manipulate the table headers and add custom columns:
 
 ```php
-$table = new Table($data);
 $table->renameHeaders(['name' => 'Full Name'])
     ->addHeader('Action', function($row) {
         return '<a href="delete.php?id={{id}}">Delete</a>';
@@ -39,4 +38,4 @@ $table->renameHeaders(['name' => 'Full Name'])
     ->addBodyClass('body-class')
     ->HTML();
 ```
-
+In the addHeader method, use {{ }} to reference any existing key.
