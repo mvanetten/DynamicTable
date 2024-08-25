@@ -1,10 +1,8 @@
 <?php
 
 /**
- * Dynamice Table
+ * Dynamic Table
  * https://github.com/mvanetten/dynamictable
- *
- * About the author
  */
 
 class Table {
