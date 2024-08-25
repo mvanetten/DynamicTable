@@ -47,10 +47,8 @@ class Table {
     public function renameHeaders(array $columnReplacements): self {
         foreach ($columnReplacements as $original => $newName) {
             if (($key = array_search($original, $this->headers)) !== false) {
-                // Wijzig de naam in de kolommen-array
                 $this->headers[$key] = $newName;
     
-                // Pas ook de sleutel in de data aan
                 foreach ($this->data as &$row) {
                     if (isset($row[$original])) {
                         $row[$newName] = $row[$original];
@@ -102,7 +100,6 @@ class Table {
      * 
      * @return $this
      */
-
     public function headerToUpperCase(): self {
         $this->headerTransforms[] = 'strtoupper';
         return $this;
@@ -113,7 +110,6 @@ class Table {
      * 
      * @return $this
      */
-
     public function headerToCapitalCase(): self {
         $this->headerTransforms[] = function($header) {
             return ucwords(strtolower($header));
