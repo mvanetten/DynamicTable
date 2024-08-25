@@ -4,7 +4,7 @@
  * Dynamic Table
  * https://github.com/mvanetten/dynamictable
  */
-
+namespace mve\dt;
 class Table {
     private $data;
     private $headers;
