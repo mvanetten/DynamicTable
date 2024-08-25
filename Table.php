@@ -192,21 +192,4 @@ class Table {
         echo $tableHTML;
     }
 }
-
-$data = [
-    ['id' => 0, 'name' => 'Alice', 'age' => 25, 'city' => 'New York'],
-    ['id' => 1, 'name' => 'Bob', 'age' => 30, 'city' => 'Los Angeles'],
-    ['id' => 2, 'name' => 'Charlie', 'age' => 35, 'city' => 'Chicago'],
-];
-
-$table = new Table($data);
-$table->HTML();
-
-// Example
-$table->renameHeaders(['name' => 'Full Name'])->addHeader('', function($row) {
-            return '<a href="delete.php?id={{id2}}">Delete</a>';
-        })->headerToUpperCase()->excludeHeaders('id')
-        
-        ->HTML();
-
 ?>
