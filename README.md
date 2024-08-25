@@ -19,7 +19,7 @@ git clone https://github.com/mvanetten/dynamictable.git
  ];
  
  $table = new Table($data);
- $table->HTML();
+ $table->HTML(); # Renders the HTML code for the data
 ?>
 ```
 
