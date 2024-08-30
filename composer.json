@@ -1,7 +1,6 @@
 {
     "name": "vanetten/dynamictable",
     "description": "A simple PHP class to generate dynamic HTML tables from a multidimensional associative array.",
-    "version": "v1.0.1",
     "minimum-stability": "stable",
     "license": "MIT",
     "keywords": ["html", "generators", "table", "dynamictable", "dynamic", "laravel"],
