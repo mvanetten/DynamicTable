@@ -4,7 +4,7 @@ A simple PHP class to generate dynamic HTML tables from a multidimensional assoc
 ## Installation
 
 ```bash
-composer require vanetten/dynamictable:dev-main
+composer require vanetten/dynamictable
 ```
 
 ## Basic Usage
