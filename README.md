@@ -17,7 +17,7 @@ $data = [
     ['id' => 2, 'name' => 'Delilah', 'age' => 43, 'city' => 'Chicago'],
 ];
 $dt = new \VanEtten\DynamicTable($data);
-$html $dt->render();
+$html = $dt->render();
 echo $html;
 ?>
 ```
