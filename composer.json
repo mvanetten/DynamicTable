@@ -1,0 +1,18 @@
+{
+    "name": "mve/dynamictable",
+    "description": "A simple PHP class to generate dynamic HTML tables from a multidimensional associative array.",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Mve\\Utils\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "M van Etten",
+            "homepage": "https://github.com/mvanetten/DynamicTable/",
+            "role": "Educator"
+        }
+    ],
+    "require": {}
+}
