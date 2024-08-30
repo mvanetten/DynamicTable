@@ -33,6 +33,9 @@ echo $html;
 You can chain multiple methods to manipulate the table headers and add custom columns:
 
 ```php
+
+# In the addHeader method, use {{ }} to reference any existing key.
+
 $dt->renameHeaders(['name' => 'Full Name'])
     ->addHeader('Action', function($row) {
         return '<a href="delete.php?id={{id}}">Delete</a>';
@@ -43,4 +46,12 @@ $dt->renameHeaders(['name' => 'Full Name'])
     ->addHeaderClass('header-class')
     ->addBodyClass('body-class');
 ```
-In the addHeader method, use {{ }} to reference any existing key.
+
+> output
+
+|  FULL NAME | AGE | CITY        |ACTION     |
+| :--------: | --: | ----------- |-----------|
+|  Henry     |  42 | Boulder     |[Delete](delete.php?id=0)|       
+|   Ned      |  40 | Los Angeles |[Delete](delete.php?id=1)|
+| Delilah    |  43 | Chicago     |[Delete](delete.php?id=2)|
+
