@@ -165,7 +165,7 @@ class DynamicTable {
      * Echo's the table in HTML
      * 
      */
-    public function HTML(): string {
+    public function render(): string {
         $tableHTML = '<table' . (!empty($this->tableClass) ? " class='{$this->tableClass}'" : '') . '>';
         $tableHTML .= '<thead' . (!empty($this->headerClass) ? " class='{$this->headerClass}'" : '') . '><tr>';
         foreach ($this->headers as $column) {
