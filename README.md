@@ -22,6 +22,7 @@ echo $html;
 ?>
 ```
 > output
+
 | id  |  name   | age | city        |
 | :-- | :-----: | --: | ----------- |
 | 0   |  Henry  |  42 | Boulder     |
