@@ -33,7 +33,6 @@ $dt->renameHeaders(['name' => 'Full Name'])
     ->excludeHeaders('id')
     ->addTableClass('table-class')
     ->addHeaderClass('header-class')
-    ->addBodyClass('body-class')
-    ->HTML();
+    ->addBodyClass('body-class');
 ```
 In the addHeader method, use {{ }} to reference any existing key.
