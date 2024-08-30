@@ -3,6 +3,7 @@
     "description": "A simple PHP class to generate dynamic HTML tables from a multidimensional associative array.",
     "version": "1.0.0",
     "license": "MIT",
+    "keywords": ["html", "generators", "table", "dynamictable", "dynamic", "laravel"],
     "autoload": {
         "psr-4": {
             "VanEtten\\": "src/"
