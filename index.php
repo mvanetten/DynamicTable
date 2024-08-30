@@ -8,7 +8,7 @@ $data = [
     ['id' => 2, 'name' => 'Delilah', 'age' => 43, 'city' => 'Chicago'],
 ];
 
-$dt = new \Mve\Utils\DynamicTable($data);
+$dt = new \VanEtten\DynamicTable($data);
 
 echo $dt->HTML();
 
