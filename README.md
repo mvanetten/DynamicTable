@@ -21,7 +21,7 @@ $html = $dt->render();
 echo $html;
 ?>
 ```
-###output
+> output
 | id  |  name   | age | city        |
 | :-- | :-----: | --: | ----------- |
 | 0   |  Henry  |  42 | Boulder     |
