@@ -10,7 +10,9 @@ $data = [
 
 $dt = new \VanEtten\DynamicTable($data);
 
-echo $dt->HTML();
+$html = $dt->render();
+
+echo $html;
 
 
 
