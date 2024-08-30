@@ -21,6 +21,12 @@ $html = $dt->render();
 echo $html;
 ?>
 ```
+###output
+| id  |  name   | age | city        |
+| :-- | :-----: | --: | ----------- |
+| 0   |  Henry  |  42 | Boulder     |
+| 1   |   Ned   |  40 | Los Angeles |
+| 3   | Delilah |  43 | Chicago     |
 
 ## Advanced Example
 You can chain multiple methods to manipulate the table headers and add custom columns:
