@@ -3,23 +3,21 @@ A simple PHP class to generate dynamic HTML tables from a multidimensional assoc
 
 ## Installation
 
-Clone the repository or download the `Table.php` file and include it in your project.
-
 ```bash
-git clone https://github.com/mvanetten/dynamictable.git
+composer require vanetten/dynamictable
 ```
+
 ## Basic Usage
 ```php
 <?php
- require 'Table.php';
- $data = [
-     ['id' => 0, 'name' => 'Henry', 'age' => 42, 'city' => 'Boulder'],
-     ['id' => 1, 'name' => 'Ned', 'age' => 40, 'city' => 'Los Angeles'],
-     ['id' => 2, 'name' => 'Delilah', 'age' => 43, 'city' => 'Chicago'],
- ];
- 
- $table = new Table($data);
- $table->HTML(); # Renders the HTML code for the data
+require_once 'vendor/autoload.php';
+$data = [
+    ['id' => 0, 'name' => 'Henry', 'age' => 42, 'city' => 'Boulder'],
+    ['id' => 1, 'name' => 'Ned', 'age' => 40, 'city' => 'Los Angeles'],
+    ['id' => 2, 'name' => 'Delilah', 'age' => 43, 'city' => 'Chicago'],
+];
+$dt = new \VanEtten\DynamicTable($data);
+echo $dt->HTML();
 ?>
 ```
 
@@ -27,7 +25,7 @@ git clone https://github.com/mvanetten/dynamictable.git
 You can chain multiple methods to manipulate the table headers and add custom columns:
 
 ```php
-$table->renameHeaders(['name' => 'Full Name'])
+$dt->renameHeaders(['name' => 'Full Name'])
     ->addHeader('Action', function($row) {
         return '<a href="delete.php?id={{id}}">Delete</a>';
     })
