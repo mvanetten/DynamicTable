@@ -5,7 +5,7 @@
  * https://github.com/mvanetten/dynamictable
  */
 
-namespace Mve\Utils;
+namespace VanEtten;
 
 class DynamicTable {
     private $data;
