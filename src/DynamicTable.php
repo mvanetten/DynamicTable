@@ -148,6 +148,7 @@ class DynamicTable {
 
     /**
      * Renders the table in HTML
+     *
      * @return string
      */
     public function render(): string {
