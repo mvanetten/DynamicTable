@@ -21,8 +21,6 @@ class DynamicTable {
     }
 
      /**
-     * excludeHeaders
-     * 
      * Exclude headers in table
      * 
      * @param mixed $headersToExclude
@@ -39,8 +37,6 @@ class DynamicTable {
     }
 
      /**
-     * renameHeaders
-     * 
      * Rename headers in table
      * 
      * @param array $headersToExclude
@@ -62,27 +58,24 @@ class DynamicTable {
         return $this;
     }
 
-     /**
-     * addHeader
-     * 
+    /**
      * Add header to the table
      * 
-     * @param string name
-     * @param callable callback
+     * @param array $header Associative array where key is column name and value is the content
      * @return $this
-     * 
      */
-    public function addHeader(string $name, callable $callback): self {
-        $this->headers[] = $name;
-        foreach ($this->data as &$row) {
-            $value = $callback($row);
+    public function addHeader(array $header): self {
+        foreach ($header as $name => $valueTemplate) {
+            $this->headers[] = $name;
+            foreach ($this->data as &$row) {
+                // Vervang placeholders in de template met waarden uit de data rij
+                $value = preg_replace_callback('/\{\{(.+)\}\}/', function($matches) use ($row) {
+                    $key = $matches[1];
+                    return $row[$key] ?? '';
+                }, $valueTemplate);
 
-            $value = preg_replace_callback('/\{\{(.+)\}\}/', function($matches) use ($row) {
-                $key = $matches[1];
-                return $row[$key] ?? '';
-            }, $value);
-
-            $row[$name] = $value;
+                $row[$name] = $value;
+            }
         }
         return $this;
     }
@@ -121,8 +114,6 @@ class DynamicTable {
 
     
      /**
-     * addTableClass
-     * 
      * Add class to the Table Element
      * 
      * @param string classname
@@ -134,8 +125,6 @@ class DynamicTable {
     }
     
     /**
-     * addHeaderClass
-     * 
      * Add class to the Table Header Element
      * 
      * @param string classname
@@ -147,8 +136,6 @@ class DynamicTable {
     }
 
     /**
-     * addBodyClass
-     * 
      * Add class to the Table Body Element
      * 
      * @param string classname
@@ -160,10 +147,8 @@ class DynamicTable {
     }
 
     /**
-     * HTML
-     * 
-     * Echo's the table in HTML
-     * 
+     * Renders the table in HTML
+     * @return string
      */
     public function render(): string {
         $tableHTML = '<table' . (!empty($this->tableClass) ? " class='{$this->tableClass}'" : '') . '>';
@@ -190,4 +175,6 @@ class DynamicTable {
         return $tableHTML;
     }
 }
+
+
 ?>
