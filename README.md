@@ -37,8 +37,7 @@ You can chain multiple methods to manipulate the table headers and add custom co
 # In the addHeader method, use {{ }} to reference any existing key.
 
 $dt->renameHeaders(['name' => 'Full Name'])
-    ->addHeader(['Action' => '<a href="delete.php?id={{id}}">Delete</a>]';
-    })
+    ->addHeader(['Action' => '<a href="delete.php?id={{id}}">Delete</a>]')
     ->headerToUpperCase()
     ->excludeHeaders('id')
     ->addTableClass('table-class')
