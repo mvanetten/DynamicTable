@@ -1,4 +1,4 @@
-# DynamicTable v1.0.4
+# DynamicTable v1.0.5
 A simple PHP class to generate dynamic HTML tables from a multidimensional associative array. This class provides various methods to manipulate table headers, add custom columns, and style the table with CSS classes.
 
 ## Installation
@@ -37,8 +37,7 @@ You can chain multiple methods to manipulate the table headers and add custom co
 # In the addHeader method, use {{ }} to reference any existing key.
 
 $dt->renameHeaders(['name' => 'Full Name'])
-    ->addHeader('Action', function($row) {
-        return '<a href="delete.php?id={{id}}">Delete</a>';
+    ->addHeader(['Action' => '<a href="delete.php?id={{id}}">Delete</a>]';
     })
     ->headerToUpperCase()
     ->excludeHeaders('id')
