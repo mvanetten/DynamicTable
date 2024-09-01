@@ -29,6 +29,15 @@ echo $html;
 | 1   |   Ned   |  40 | Los Angeles |
 | 2   | Delilah |  43 | Chicago     |
 
+## Basic Usage in Laravel
+
+> Open the view and convert the Eloquent\Collection to an Array; see example below.
+
+```php
+$dt = new \VanEtten\DynamicTable($user->posts->toArray());
+echo $dt->render();
+```
+
 ## Advanced Example
 You can chain multiple methods to manipulate the table headers and add custom columns:
 
